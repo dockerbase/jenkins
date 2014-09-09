@@ -1,0 +1,6 @@
+#!/bin/bash
+exec 2>&1
+#JAVA_OPTS=$JAVA_OPTS -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses
+export JENKINS_HOME=/var/jenkins_home
+JENKINS_PREFIX=/
+USER=jenkins exec java -jar /usr/share/jenkins/jenkins.war --prefix=$JENKINS_PREFIX
