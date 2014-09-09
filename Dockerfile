@@ -1,4 +1,4 @@
-# VERSION 1.0
+# VERSION 1.1
 # DOCKER-VERSION  1.2.0
 # AUTHOR:         Richard Lee <lifuzu@gmail.com>
 # DESCRIPTION:    Ubuntu Image Container
@@ -17,7 +17,7 @@ RUN	apt-get update
 ENV	JENKINS_KEY http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key
 
 # Install Jenkins
-RUN     wget -q -O - $JENKINS_KEY | sudo apt-key add -
+RUN     wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
 RUN     echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list
 RUN     apt-get update
 RUN     apt-get install -y --no-install-recommends jenkins
