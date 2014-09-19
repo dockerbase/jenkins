@@ -1,7 +1,7 @@
 ## Docker Base: Jenkins
 
 
-This repository contains **Dockerbase** of [Jenkins](http://jenkins-ci.org/) for [Docker](https://www.docker.com/)'s [Dockerbase build](https://registry.hub.docker.com/u/dockerbase/service/) published on the public [Docker Hub Registry](https://registry.hub.docker.com/).
+This repository contains **Dockerbase** of [Jenkins](http://jenkins-ci.org/) for [Docker](https://www.docker.com/)'s [Dockerbase build](https://registry.hub.docker.com/u/dockerbase/jenkins/) published on the public [Docker Hub Registry](https://registry.hub.docker.com/).
 
 
 ### Depends on:
