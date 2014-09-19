@@ -16,6 +16,16 @@ run:
 	@echo "chown 102 /var/dockerbase/jenkins"
 	docker run --name dockerbase-jenkins --restart=always -t --cidfile cidfile -p 8280:8080 -v /var/dockerbase/jenkins:/var/jenkins_home -d $(NAME):$(VERSION) /sbin/runit
 
+version:
+	docker run -it --rm $(NAME):$(VERSION) sh -c " lsb_release -d ; git --version ; ssh -V " | tee COMPONENTS
+	docker run -it --rm $(NAME):$(VERSION) bash -lc " dpkg-query --show jenkins " | tee -a COMPONENTS
+	dos2unix COMPONENTS
+	sed -i -e 's/^/    /' COMPONENTS
+	sed -i -e '/^### Components & Versions/q' README.md
+	echo >> README.md
+	cat COMPONENTS >> README.md
+	rm COMPONENTS
+
 start:
 	docker start `cat cidfile`
 

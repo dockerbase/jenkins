@@ -1,7 +1,7 @@
 # VERSION 1.1
 # DOCKER-VERSION  1.2.0
 # AUTHOR:         Richard Lee <lifuzu@gmail.com>
-# DESCRIPTION:    Ubuntu Image Container
+# DESCRIPTION:    Jenkins Image Container
 
 FROM dockerbase/service
 

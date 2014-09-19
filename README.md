@@ -26,3 +26,10 @@ This repository contains **Dockerbase** of [Jenkins](http://jenkins-ci.org/) for
 
     stop:
         sudo docker stop -t 10 `cat cidfile`
+
+### Components & Versions
+
+    Description:	Ubuntu 14.04.1 LTS
+    git version 1.9.1
+    OpenSSH_6.6.1p1 Ubuntu-2ubuntu2, OpenSSL 1.0.1f 6 Jan 2014
+    jenkins	1.580
