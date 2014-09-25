@@ -1,6 +1,12 @@
 #!/bin/bash
 exec 2>&1
 #JAVA_OPTS=$JAVA_OPTS -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses
+JAVA=$JRE_HOME/bin/java
+JAVA_ARGS="-Dorg.jenkinsci.plugins.gitclient.Git.timeOut=120 -Xms2G -Xmx4G -XX:MaxPermSize=2G"
+JENKINS_USER=jenkins
+JENKINS_WAR=/usr/share/jenkins/jenkins.war
+AJP_PORT=-1
 export JENKINS_HOME=/var/jenkins_home
 JENKINS_PREFIX=/
-USER=jenkins exec java -jar /usr/share/jenkins/jenkins.war --prefix=$JENKINS_PREFIX
+JENKINS_ARGS="--ajp13Port=$AJP_PORT --prefix=$JENKINS_PREFIX"
+USER=jenkins exec java $JAVA_ARGS -jar $JENKINS_WAR $JENKINS_ARGS
